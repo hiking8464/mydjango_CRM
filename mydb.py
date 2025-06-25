@@ -1,8 +1,14 @@
 import mysql.connector
+from decouple import config
+
+
+host = config('MYSQL_HOST')
+root = config('MYSQL_USER')
+password = config('MYSQL_PASSWORD')
 database = mysql.connector.connect(
-    host = 'localhost',
-    user = 'root',
-    passwd = 'harsha2001',
+    host = host,
+    user = root,
+    passwd = password,
 )
 
 # prepare a cursor
